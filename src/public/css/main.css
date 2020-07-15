@@ -1,9 +1,11 @@
-body{
+body {
     background-color: rgb(238, 245, 249);
 }
-.b-thick{
-    border-width: 5px!important;
+
+.b-thick {
+    border-width: 5px !important;
 }
-.bg-lightish{
-    background-color: #f6f7f8!important;
+
+.bg-lightish {
+    background-color: #f6f7f8 !important;
 }
