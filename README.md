@@ -37,6 +37,11 @@ services:
 Don't forget to adjust the **environment variables** and the **configuration file** 
 according to your setup.
 
+> NOTE
+> If you run this in production under AWS then you can simply secure it using the 
+> [AWS Cognito](https://aws.amazon.com/cognito/) service or put it behind a secure
+> proxy.
+
 ### Environment variables
 Because this image uses the [aws-sdk](https://www.npmjs.com/package/aws-sdk) we 
 need to configure the credentials for it accoording with the [official documentation](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-environment.html):
