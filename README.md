@@ -1,2 +1,2 @@
-# AWS Instance state scheduler (**ISS**)
+# AWS Instance State Scheduler (**ISS**)
 
