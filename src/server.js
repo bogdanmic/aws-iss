@@ -50,11 +50,6 @@ fastify.register(fastifyStatic, {
     decorateReply: false // the reply decorator has been added by the first plugin registration
 })
 fastify.register(fastifyStatic, {
-    root: path.join(__dirname, '../node_modules/popper.js/dist'),
-    prefix: '/vendor/popper/',
-    decorateReply: false // the reply decorator has been added by the first plugin registration
-})
-fastify.register(fastifyStatic, {
     root: path.join(__dirname, '../node_modules/vue/dist'),
     prefix: '/vendor/vue/',
     decorateReply: false // the reply decorator has been added by the first plugin registration

@@ -115,22 +115,23 @@ Vue.component('ec2-instance-item', {
             <span data-toggle="tooltip" data-placement="top" :title="instance.State">
                 {{instance.Name}}
             </span>
-            <small class="text-muted float-right" data-toggle="tooltip" data-placement="top" title="Private Ip Address">
+            <small class="text-muted float-sm-right d-block d-sm-inline" data-toggle="tooltip" data-placement="top" title="Private Ip Address">
                 <i class="fas fa-network-wired"></i>
                 <span class="font-weight-bold user-select-all">{{instance.PrivateIpAddress}}</span>
             </small>
         </h5>
         <ec2-instance-actions :instance-id="instance.InstanceId" :instance-state="instance.State" :is-enabled="instance.isInteractive"></ec2-instance-actions>
         <h6 class="card-subtitle mb-2 text-muted">
-            <span class="mr-2" data-toggle="tooltip" data-placement="bottom" title="Core count/Threads per core">
+            <span class="mr-2 d-block d-sm-inline" data-toggle="tooltip" data-placement="bottom" title="Core count/Threads per core">
                 <i class="fas fa-microchip"></i>
                 <span>{{instance.CpuOptions.CoreCount}}/{{instance.CpuOptions.ThreadsPerCore}}</span>
             </span>
-            <span class="mr-2" data-toggle="tooltip" data-placement="bottom" title="Instance type">
+            <span class="mr-2 d-block d-sm-inline" data-toggle="tooltip" data-placement="bottom" title="Instance type">
                 <i class="fas fa-cube"></i>
                 <span>{{instance.InstanceType}}</span>
             </span>
-            <span v-if="instance.PublicDnsName.length" data-toggle="tooltip" data-placement="bottom" title="Public DNS">
+            <span v-if="instance.PublicDnsName.length" data-toggle="tooltip" data-placement="bottom" title="Public DNS"
+                class="d-none d-sm-inline">
                 <i class="fas fa-globe"></i>
                 <span class="user-select-all">{{instance.PublicDnsName}}</span>
             </span>
@@ -159,22 +160,23 @@ Vue.component('rds-instance-item', {
             <span data-toggle="tooltip" data-placement="top" :title="instance.DBInstanceStatus">
                 {{instance.DBInstanceIdentifier}}
             </span>
-            <small class="text-muted float-right" data-toggle="tooltip" data-placement="top" title="DB Engine">
+            <small class="text-muted float-sm-right d-block d-sm-inline" data-toggle="tooltip" data-placement="top" title="DB Engine">
                 <i class="fas fa-cogs"></i>
                 <span class="font-weight-bold">{{instance.Engine}}</span>
             </small>
         </h5>
         <rds-instance-actions :instance-id="instance.DBInstanceIdentifier" :instance-state="instance.DBInstanceStatus" :is-enabled="instance.isInteractive"></rds-instance-actions>
         <h6 class="card-subtitle mb-2 text-muted">
-            <span class="mr-2" data-toggle="tooltip" data-placement="bottom" title="Storage size">
+            <span class="mr-2 d-block d-sm-inline" data-toggle="tooltip" data-placement="bottom" title="Storage size">
                 <i class="fas fa-hdd"></i>
                 <span>{{instance.AllocatedStorage}}</span>
             </span>
-            <span class="mr-2" data-toggle="tooltip" data-placement="bottom" title="Instance type">
+            <span class="mr-2 d-block d-sm-inline" data-toggle="tooltip" data-placement="bottom" title="Instance type">
                 <i class="fas fa-cube"></i>
                 <span>{{instance.DBInstanceClass}}</span>
             </span>
-            <span v-if="instance.Endpoint.length" data-toggle="tooltip" data-placement="bottom" title="Public DNS">
+            <span v-if="instance.Endpoint.length" data-toggle="tooltip" data-placement="bottom" title="Public DNS"
+                class="d-none d-sm-inline">
                 <i class="fas fa-globe"></i>
                 <span class="user-select-all">{{instance.Endpoint}}</span>
             </span>
