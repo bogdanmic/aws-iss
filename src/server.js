@@ -4,6 +4,7 @@
 const fastify = require('fastify')({
     logger: true
 })
+const fastifyStatic = require('fastify-static')
 const path = require('path')
 const schedule = require('./schedulers')
 
@@ -27,9 +28,41 @@ fastify.register(require('point-of-view'), {
 // Adds security headers for fastify
 fastify.register(require('fastify-helmet'))
 // Configure the plugin for serving static files as fast as possible
-fastify.register(require('fastify-static'), {
+fastify.register(fastifyStatic, {
     root: path.join(__dirname, '/public'),
     prefix: '/public/', // optional: default '/'
+})
+
+// Register static resources
+fastify.register(fastifyStatic, {
+    root: path.join(__dirname, '../node_modules/@fortawesome/fontawesome-free'),
+    prefix: '/vendor/fontawesome/',
+    decorateReply: false // the reply decorator has been added by the first plugin registration
+})
+fastify.register(fastifyStatic, {
+    root: path.join(__dirname, '../node_modules/bootstrap/dist'),
+    prefix: '/vendor/bootstrap/',
+    decorateReply: false // the reply decorator has been added by the first plugin registration
+})
+fastify.register(fastifyStatic, {
+    root: path.join(__dirname, '../node_modules/jquery/dist'),
+    prefix: '/vendor/jquery/',
+    decorateReply: false // the reply decorator has been added by the first plugin registration
+})
+fastify.register(fastifyStatic, {
+    root: path.join(__dirname, '../node_modules/popper.js/dist'),
+    prefix: '/vendor/popper/',
+    decorateReply: false // the reply decorator has been added by the first plugin registration
+})
+fastify.register(fastifyStatic, {
+    root: path.join(__dirname, '../node_modules/vue/dist'),
+    prefix: '/vendor/vue/',
+    decorateReply: false // the reply decorator has been added by the first plugin registration
+})
+fastify.register(fastifyStatic, {
+    root: path.join(__dirname, '../node_modules/axios/dist'),
+    prefix: '/vendor/axios/',
+    decorateReply: false // the reply decorator has been added by the first plugin registration
 })
 
 // Register our routes
