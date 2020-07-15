@@ -1,0 +1,21 @@
+schedulers:
+  ec2Schedulers:
+    enabled: false
+    startCron: "*/2 * * * * *"
+    stopCron: "*/2 * * * * *"
+  rdsSchedulers:
+    enabled: false
+    startCron: "*/2 * * * * *"
+    stopCron: "*/2 * * * * *"
+
+aws:
+  region: "eu-west-1"
+  interactiveInstances:
+    ec2: [ "i-5b6e941b", # gd-db1
+      "i-0c24c85baa231fb53", # ci-jenkins-instance-cf
+      "i-0d2ad675fc387362f", # master5-python2
+      "i-04e37a1916c51f71f", # ftb-stg-1
+      "i-0f2d2604577318ccf", # golf-stg-1
+      # "i-06150aea26feacf88"  // evo-staging-instance TODO: Can this be restartable? Should evolution have access to this "tool"?
+    ]
+    rds:  ["pg-staging-1"]

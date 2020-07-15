@@ -1,0 +1,43 @@
+{
+  "name": "aws-iss",
+  "version": "1.0.0",
+  "description": "AWS Instance State Scheduler",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bogdanmic/aws-iss.git"
+  },
+  "keywords": [
+    "aws",
+    "ec2",
+    "rds",
+    "restart",
+    "schedule",
+    "start",
+    "stop"
+  ],
+  "author": "mic.bogdan@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bogdanmic/aws-iss/issues"
+  },
+  "homepage": "https://github.com/bogdanmic/aws-iss#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.713.0",
+    "config": "^3.3.1",
+    "fastify": "^3.0.2",
+    "fastify-helmet": "^4.0.2",
+    "fastify-static": "^3.1.0",
+    "handlebars": "^4.7.6",
+    "js-yaml": "^3.14.0",
+    "node-schedule": "^1.3.2",
+    "point-of-view": "^4.2.0"
+  }
+}
