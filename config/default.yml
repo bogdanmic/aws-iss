@@ -1,12 +1,12 @@
 schedulers:
   ec2Schedulers:
     enabled: false
-    startCron: "*/2 * * * * *"
-    stopCron: "*/2 * * * * *"
+    startCron: "0 0 7 * * 1-5"
+    stopCron: "0 0 20 * * 1-5"
   rdsSchedulers:
     enabled: false
-    startCron: "*/2 * * * * *"
-    stopCron: "*/2 * * * * *"
+    startCron: "0 0 7 * * 1-5"
+    stopCron: "0 0 20 * * 1-5"
 
 aws:
   region: "eu-west-1"
