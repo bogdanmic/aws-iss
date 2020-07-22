@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{>head}}
+</head>
+
+<body>
+    {{>header}}
+    <div id="theApp" class="container-fluid">
+        {{{body}}}
+    </div>
+    {{>footer}}
+    {{!-- LOAD our JS at the beginning. Pro TIP: the CSS is in the head partial --}}
+    <script src="/public/js/main.js"></script>
+    {{!-- We load the JS here because we don't want the VUE code to fail so we need to have all the dom elements --}}
+</body>
+
+</html>

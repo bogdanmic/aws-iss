@@ -1,0 +1,15 @@
+schedulers:
+  ec2Schedulers:
+    enabled: false
+    startCron: "0 0 7 * * 1-5"
+    stopCron: "0 0 20 * * 1-5"
+  rdsSchedulers:
+    enabled: false
+    startCron: "0 0 7 * * 1-5"
+    stopCron: "0 0 20 * * 1-5"
+
+aws:
+  region: "eu-west-1"
+  interactiveInstances:
+    ec2: []
+    rds:  []
