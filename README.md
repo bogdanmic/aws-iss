@@ -1,4 +1,7 @@
 # AWS Instance State Scheduler (**ISS**)
+AWS Instance State Scheduler. Start & Stop your AWS instances (RDS & EC2) on a 
+schedule. Manage your AWS costs and help the environment.
+
 This is a small app that will allow you to configure schedules according to which
 your [AWS EC2](https://aws.amazon.com/ec2/) and [AWS RDS](https://aws.amazon.com/rds/) 
 instances will be started and stopped. For instance if you have **testing** and/or 
@@ -14,7 +17,7 @@ in case you need that.
 You can start this image using your CLI or by using a [docker-compose.yml](docker-compose.yml)
 file similar with the one bellow:
 ```yml
-version: '3'
+version: '3.4'
 services:
   aws-iss:
     image: "bogdanmic/aws-iss:latest"
@@ -28,6 +31,12 @@ services:
       AWS_SECRET_ACCESS_KEY: "YOUR_AWS_SECRET_ACCESS_KEY"
     volumes:
       - /PATH/TO/YOUR-CONFIG.yml:/app/config/production.yml
+    healthcheck:
+      test:  wget -qO- http://localhost:3000/ || exit 1
+      interval: 30s
+      timeout: 5s
+      retries: 2
+      start_period: 30s
     logging:
       driver: "json-file"
       options:
@@ -94,10 +103,9 @@ aws:
     ec2: []
     rds:  []
 ```
-Because we use [node-schedule](https://www.npmjs.com/package/node-schedule) you can
-check their documentation on the cron format used but here is a small peek take
-from [their README](https://github.com/node-schedule/node-schedule/blob/master/README.md)
-file:
+For scheduling we use [node-schedule](https://www.npmjs.com/package/node-schedule).
+You can check their documentation on the cron format used but here is a small peek
+from [their README file](https://github.com/node-schedule/node-schedule/blob/master/README.md):
 > The cron format consists of:
 > ```
 > *    *    *    *    *    *
@@ -111,12 +119,12 @@ file:
 > └───────────────────────── second (0 - 59, OPTIONAL)
 > ```
 
-You can also access the [Dashboard](http://localhost:3000/#) on http://localhost:3000/#
+To access the [Dashboard](http://localhost:3000/#) go to http://localhost:3000/#
 if you started the container locally.
 
 The **Dashboard** provides an overview of your AWS EC2 and RDS instances and
 based on your configuration of ```aws.interactiveInstances.ec2``` and ```aws.interactiveInstances.rds```
-you will be able to Start/Stop those instances using the dashboard.
+you will be able to Start/Stop those instances from the dashboard.
 
 ### Resources for future work/fixes
  - [Node-Config and Configuration Files](https://github.com/lorenwest/node-config/wiki/Configuration-Files)
