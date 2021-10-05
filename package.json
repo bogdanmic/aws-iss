@@ -37,7 +37,7 @@
     "config": "^3.3.1",
     "fastify": "^3.0.2",
     "fastify-helmet": "^4.0.2",
-    "fastify-static": "^3.1.0",
+    "fastify-static": "^4.2.4",
     "handlebars": "^4.7.6",
     "jquery": "^3.5.1",
     "js-yaml": "^3.14.0",
