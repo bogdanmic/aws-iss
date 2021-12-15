@@ -134,3 +134,11 @@ you will be able to Start/Stop those instances from the dashboard.
  - [AWS SDK js examples](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/javascript/example_code/ec2)
  - [AWS SDK docs](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/RDS.html)
  - [AWS SDK Javascript developer guide](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/using-promises.html)
+<!--
+ TODO: scrie cum sa ii faci development si poate adauga chestii sa poti rula local
+ - ordonat dupa ce ii interactiv la inceput si apoi dupa nume?
+ - pop-up de agree cand dai start stop?
+ - sa afisez ce ii scheduled sa isi faca restart si in ui si poate si cand?
+ - sa se ascunda butonu de start stop pt alea disabled?
+ - scrisa aplicatia de vue asa cum ar trebui?
+-->
